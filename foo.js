@@ -1,7 +1,6 @@
-var foo = (function() {
-    var exports = {};
+module.exports = {
 
-    exports.zip = function() {
+    zip: function() {
         var args = [].slice.call(arguments);
         var failed = false;
         var len, zip;
@@ -35,7 +34,6 @@ var foo = (function() {
         }
 
         return zip;
-    };
+    }
+};
 
-    return exports;
-}());
