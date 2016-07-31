@@ -34,6 +34,21 @@ module.exports = {
         }
 
         return zip;
+    },
+
+    decorate: function(objArr, fn) {
+        return objArr.map(function(obj) {
+            return [fn(obj), obj];
+        });
+    },
+
+    undecorate: function(arr) {
+        var undecorated = [];
+        arr.forEach(function(subarr) {
+            undecorated.push(subarr[1]);
+        });
+
+        return undecorated;
     }
 };
 
