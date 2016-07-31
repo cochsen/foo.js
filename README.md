@@ -3,7 +3,7 @@
 ### Extra Javascript functions
 ---
 
-A module of some extra functions that are built into languages
+A module of some extra functions that are built into other languages
 
 Run tests with node.js
 - install node.js
@@ -65,7 +65,7 @@ undecorate: undecorate the decorated objects
 ```
 // Undecorate the sorted objects to their original structure
 var undecorated = undecorate(sorted);
-console.log(decorated);
+console.log(undecorated);
 // [ { id: 3, credits: { math: 5, physics: 5, geography: 7 } }
 //   { id: 0, credits: { math: 9, physics: 6, history: 7 } },
 //   { id: 1, credits: { math: 6, physics: 7, latin: 10 } },
