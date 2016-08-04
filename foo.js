@@ -49,6 +49,32 @@ module.exports = {
         });
 
         return undecorated;
-    }
+    },
+
+    tuple: function(arr) {
+        var t = (function(arr) {
+            var t = [];
+            arr.forEach(function(item) {
+                t.push(item);
+            });
+            
+            tuple = {
+                list: function() {
+                    t.forEach(function(item) {
+                        console.log(item);
+                    });
+                },
+                get: function(i) {
+                    return t[i];
+                },
+                copy: function() {
+                    return t;
+                }
+            };
+
+            return tuple;
+        })(arr);
+        return t;
+    }     
 };
 
