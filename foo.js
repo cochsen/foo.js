@@ -106,6 +106,23 @@ module.exports = {
             return iter;
         })(arr, fn); 
         return i;
-    }  
+    },
+
+    isEmpty: function(thing) {
+        if (typeof(thing) === 'object') {
+            var prop;
+            var props = [];
+            for (prop in thing) {
+                props.push(thing);
+            }
+            return props.length === 0;
+        } 
+        
+        if (thing.constructor === Array) {
+            return thing.length === 0;
+        }
+
+        return (thing === null) || (thing === '') || (thing === undefined);
+    } 
 };
 

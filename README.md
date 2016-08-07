@@ -52,6 +52,9 @@ sqIter.next();  // 9
 sqIter.next();  // NaN
 ```
 ---
+isEmpty: returns true for passed objects with no properties, empty arrays, empty strings and variables with values null or undefined. 
+
+---
 decorate: add a 'decorator' to each object in an array for the purpose of sorting, filtering, etc. The decorator is determined by another function passed in as a second argument.
 ```
 var students = [
