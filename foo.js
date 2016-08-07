@@ -75,6 +75,40 @@ module.exports = {
             return tuple;
         })(arr);
         return t;
-    }     
+    },
+
+    iter: function(arr) {
+        var i = (function(arr) {
+            var indexes = [];
+            var i;
+
+            var iter = {
+                data: arr,
+                indexes: null,
+                iter: function() {
+                    return this;
+                },
+                next: function() {
+                    return this.data.pop();
+                },
+                updateIndexes: function() {
+                    var i;
+                    for (i = 0; i < this.data.length; i++) {
+                        this.indexes.push(i);
+                    }
+                },
+                getIndexes: function() {
+                    var i;
+                    this.indexes = [];
+                    for (i=0; i<this.data.length; i++) {
+                        this.indexes.push(i);
+                    }
+                    return this.indexes;
+                }
+            }; 
+            return iter;
+        })(arr); 
+        return i;
+    }  
 };
 
