@@ -64,10 +64,13 @@ module.exports = {
                         console.log(item);
                     });
                 },
-                get: function(i) {
+                getAt: function(i) {
                     return t[i];
                 },
                 copy: function() {
+                    return this;
+                },
+                toArray: function() {
                     return t;
                 }
             };
@@ -89,7 +92,7 @@ module.exports = {
                     return this;
                 },
                 next: function() {
-                    return this.data.pop();
+                    return this.data.shift();
                 },
                 updateIndexes: function() {
                     var i;
