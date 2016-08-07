@@ -40,6 +40,16 @@ myIter.next();  // 1
 myIter.next();  // 2
 myIter.next();  // 3
 myIter.next();  // undefined
+
+function square(x) {
+    return x * x;
+}
+
+var sqIter = foo.iter([1,2,3], square);
+sqIter.next();  // 1
+sqIter.next();  // 4
+sqIter.next();  // 9
+sqIter.next();  // NaN
 ```
 ---
 decorate: add a 'decorator' to each object in an array for the purpose of sorting, filtering, etc. The decorator is determined by another function passed in as a second argument.
