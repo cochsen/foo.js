@@ -80,37 +80,31 @@ module.exports = {
         return t;
     },
 
-    iter: function(arr) {
-        var i = (function(arr) {
-            var indexes = [];
+    iter: function(arr, fn) {
+        var i = (function(arr, fn) {
             var i;
 
             var iter = {
                 data: arr,
-                indexes: null,
                 iter: function() {
                     return this;
                 },
                 next: function() {
-                    return this.data.shift();
-                },
-                updateIndexes: function() {
-                    var i;
-                    for (i = 0; i < this.data.length; i++) {
-                        this.indexes.push(i);
+                    var result;
+                    if (!fn) {
+                        result = this.data[0];
+                    } else {
+                        result = fn(this.data[0]);
                     }
+                    this.data.shift();
+                    return result;
                 },
-                getIndexes: function() {
-                    var i;
-                    this.indexes = [];
-                    for (i=0; i<this.data.length; i++) {
-                        this.indexes.push(i);
-                    }
-                    return this.indexes;
+                getData: function() {
+                    return this.data;
                 }
             }; 
             return iter;
-        })(arr); 
+        })(arr, fn); 
         return i;
     }  
 };
