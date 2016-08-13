@@ -8,7 +8,7 @@ module.exports = {
         args.some(function(arg) {
             if (arg.constructor !== Array) {
                 failed = true;
-                return arg.constructor !== Array;
+                return;
             }       
         });
 
@@ -123,6 +123,14 @@ module.exports = {
         }
 
         return (thing === null) || (thing === '') || (thing === undefined);
-    } 
+    }, 
+
+    isArray: function(thing) {
+        return thing.constructor === Array;
+    },
+
+    isObject: function(thing) {
+        return typeof(thing) === 'object';
+    }
 };
 
