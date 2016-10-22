@@ -131,6 +131,47 @@ module.exports = {
 
     isObject: function(thing) {
         return typeof(thing) === 'object';
+    },
+
+    Array: {
+        unique: function(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                var found = false;
+                for (var j = 0; j < newArr.length; j++) {
+                    if (arr[i] === newArr[j]) {
+                        found = true;
+                        continue;
+                    }
+                }
+                if (!found) {
+                    newArr.push(arr[i]);
+                }
+            }
+
+            return newArr;
+        },
+
+        union: function(arr1, arr2) {
+            return this.unique(
+                arr1.concat(arr2)
+            );
+        },
+
+        intersection: function(arr1, arr2) {
+            var intersectionArr = [];
+            var uArr1 = this.unique(arr1);
+            var uArr2 = this.unique(arr2);
+
+            for (var i = 0; i < uArr1.length; i++) {
+                for (var j = 0; j < uArr2.length; j++) {
+                    if (uArr1[i] === uArr2[j]) {
+                        intersectionArr.push(uArr1[i]);
+                    }
+                }
+            }
+            return this.unique(intersectionArr);
+        }
     }
 };
 
