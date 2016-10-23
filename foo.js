@@ -171,6 +171,29 @@ module.exports = {
                 }
             }
             return this.unique(intersectionArr);
+        },
+
+        difference: function(arr1, arr2, uniq) {
+            var diff = [];
+            var inter = this.intersection(arr1, arr2);
+
+            for (var i = 0; i < arr1.length; i++) {
+                var found = false;
+                for (var j = 0; j < inter.length; j++) {
+                    if (arr1[i] === inter[j]) {
+                        found = true;
+                    }
+                }
+                if (!found) {
+                    diff.push(arr1[i]);
+                }
+            }
+
+            if (uniq) {
+                return this.unique(diff); 
+            } else {
+                return diff;
+            }
         }
     }
 };

@@ -87,3 +87,6 @@ console.log(Foo.Array.unique(arr1));
 console.log(Foo.Array.unique(arr3));
 console.log(Foo.Array.union(arr1, arr2));
 console.log(Foo.Array.intersection(arr1, arr2));
+console.log(Foo.Array.difference(arr1, arr2));
+console.log(Foo.Array.difference(arr3, arr2));
+console.log(Foo.Array.difference(arr2, arr3, true));
