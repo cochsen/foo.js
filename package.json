@@ -1,0 +1,23 @@
+{
+  "name": "foo.js",
+  "version": "1.0.0",
+  "description": "Extra JS functions",
+  "main": "foo.js",
+  "scripts": {
+    "test": "mocha **/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cochsen/foo.js.git"
+  },
+  "author": "Chris Ochsenreither",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cochsen/foo.js/issues"
+  },
+  "homepage": "https://github.com/cochsen/foo.js#readme",
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.0.0"
+  }
+}
