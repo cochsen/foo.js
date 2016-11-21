@@ -97,8 +97,31 @@ describe('Foo.isEmpty', () => {
     });
 });
 
+describe('Foo.Array function tests', () => {
+    let arr1 = [1,2,3,4];
+    let arr2 = [3,4,5,6];
+    let arr3 = [1,1,2,2,3,3,4,4];
 
+    it('unique array items', () => {
+        let res = Foo.Array.unique(arr3)
+        expect(res).toBeA('array').toEqual([1, 2, 3, 4]);
+    });
 
+    it('union of arrays', () => {
+        let res = Foo.Array.union(arr1, arr2);
+        expect(res).toBeA('array').toEqual([1, 2, 3, 4, 5, 6]);
+    });
+
+    it('intersection of arrays', () => {
+        let res = Foo.Array.intersection(arr1, arr2);
+        expect(res).toBeA('array').toEqual([3, 4]);
+    });
+
+    it('difference of arrays', () => {
+        let res = Foo.Array.difference(arr1, arr2, true);
+        expect(res).toBeA('array').toEqual([1, 2]);
+    });
+});
 
 
 
